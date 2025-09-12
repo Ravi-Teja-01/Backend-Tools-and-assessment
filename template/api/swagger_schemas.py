@@ -10,7 +10,7 @@ def register_models(api: Api):
     auth_model = api.model('Auth', {
         'accessToken': fields.String(
             required=True, 
-            description='HubSpot API access token', 
+            description='API access token for authentication', 
         )
     })
 
