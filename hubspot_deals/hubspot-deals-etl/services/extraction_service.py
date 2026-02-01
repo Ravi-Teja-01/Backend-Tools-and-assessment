@@ -23,7 +23,7 @@ from loki_logger import get_logger, log_business_event, log_security_event
 class ExtractionService:
     """Service for orchestrating data extraction pipelines using DLT"""
 
-    def __init__(self, config: Dict[str, Any], source_type: str = "{{SERVICE_NAME_SNAKE}}"):
+    def __init__(self, config: Dict[str, Any], source_type: str = "hubspot_deals"):
         self.config = config
         self.source_type = source_type
         self.job_service = JobService()
@@ -520,7 +520,7 @@ class ExtractionService:
         return self.job_service.get_job_statistics(organization_id)
 
     def get_scan_results(
-        self, scan_id: str, table_name: str = "{{SERVICE_NAME_SNAKE}}", limit: int = 100, offset: int = 0
+        self, scan_id: str, table_name: str = "hubspot_deals", limit: int = 100, offset: int = 0
     ) -> Dict[str, Any]:
         """Get scan results with pagination"""
         try:

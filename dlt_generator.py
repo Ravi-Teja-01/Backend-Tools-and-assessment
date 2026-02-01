@@ -16,6 +16,12 @@ from pathlib import Path
 from typing import Dict, Optional, Any
 
 
+import os
+
+HUBSPOT_BASE_URL = os.getenv("HUBSPOT_BASE_URL")
+ACCESS_TOKEN = os.getenv("HUBSPOT_ACCESS_TOKEN")
+
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
